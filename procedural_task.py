@@ -13,7 +13,7 @@ def list_tasks():
         return
     for task in tasks:
         status = "✓" if task["complete"] else ""
-        due = f"(due:{task['due_date']})" if task["due_date"] else ""
+        due = f"(due:{task['due_date']})" if task['due_date'] else ""
         print(f"[{status}]{task['id']}. {task['description']}{due}")
     print("---------")
 
