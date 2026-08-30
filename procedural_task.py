@@ -29,7 +29,7 @@ def mark_task_complete(task_id):
 def save_task_to_file(filename="tasks.txt"):
     with open(filename, "w") as f:
         for task in tasks:
-            f.write(f"{task['id']},{task['description']},{task["due_date"]},{task['complete']}\n")
+            f.write(f"{task['id']},{task['description']},{task['due_date']},{task['complete']}\n")
         print(f"Tasks saved to {filename}")
 
 if __name__ == "__main__":
