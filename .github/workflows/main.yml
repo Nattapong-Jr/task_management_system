@@ -1,0 +1,40 @@
+name: Python CI/CD Pipeline
+on: 
+ push: 
+  branches: 
+   - main
+ pull_request: 
+   branches: 
+   - main
+jobs: 
+ build-and-test: 
+  runs-on: ubuntu-latest
+
+  steps: 
+  - name: Checkout code
+    uses: actions/checkout@v4
+  - name: Set up Python
+
+    uses: actions/setup-python@v5
+    with: 
+      python-version: '3.9' # หรอืเวอรช์ นั ทใีѷ ช ้
+
+  - name: Install dependencies
+    run: |
+      python -m pip install --upgrade pip
+      # pip install -r requirements.txt # ถา้มไีฟล์requirements.txt
+      pip install flake8 black # ตดิ ตง ัѸ linter/formatter
+
+  - name: Run Linters (Code Quality Check)
+    run: |
+      flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      # black --check . # ถา้ใช ้black
+
+  - name: Run Tests (Conceptual - no actual tests yet)
+    run: |
+      echo "Running conceptual tests..."
+      # python -m unittest discover # ถา้มีUnit Tests จรงิๆ
+      # pytest # ถา้ใช ้pytest
+      echo "All checks passed!"
+  - name: Display success message
+    run: echo "CI/CD Pipeline finished successfully!"
