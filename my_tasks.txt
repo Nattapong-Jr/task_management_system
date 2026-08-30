@@ -1,4 +1,4 @@
-1,learn git,2024-08-01,True
-2,practice oop,2024-08-05,False
-3,Review SOLID Principles,2024-08-10,False
-4,Prepare for Final Exam,2024-08-15,False
+1,Review SOLID Principles,2024-08-10,True,medium
+2,Prepare for Final Exam,2024-08-15,False,medium
+3,Review SOLID Principles,2024-08-10,False,medium
+4,Prepare for Final Exam,2024-08-15,False,medium
